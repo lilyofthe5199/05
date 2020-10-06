@@ -6,17 +6,22 @@
 int main(int argc, char *argv[]) {
 	
 	int input;
-	int i;
-	int sum=0;
-
-
-	printf("input a number:");
-	scanf("%i", &input);
-
-	for (i=1; i<=input; i++) // 초기식, 조건식, 증감식
-		sum += i;
-
-	printf("The result is %i\n", sum);
+	int trial=0;
+	int answer = 59;
 	
+	do
+	{	printf("Guess a number :");
+		scanf("%i", &input);
+		if(answer > input)
+			printf("low!\n");
+		else if(input>answer)
+				printf("high!\n");
+		trial++;
+	}
+	
+	while (input != answer); // input과 answer이 다를 동안 계속 진행
+	
+	printf("Congratulation! trials: %i\n", trial);
+
 	return 0;
 }
